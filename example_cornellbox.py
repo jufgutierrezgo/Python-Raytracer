@@ -29,15 +29,19 @@ Sc.add(Plane(material = emissive_white,  center = vec3(213 + 130/2, 554, -227.0 
 					 importance_sampled = True)
 
 
-
+# south wall
 Sc.add(Plane(material = white_diffuse,  center = vec3(555/2, 555/2, -555.0), width = 555.0,height = 555.0, u_axis = vec3(0.0, 1.0, 0), v_axis = vec3(1.0, 0, 0.0)))
 
+# east wall
 Sc.add(Plane(material = green_diffuse,  center = vec3(-0.0, 555/2, -555/2), width = 555.0,height = 555.0,  u_axis = vec3(0.0, 1.0, 0), v_axis = vec3(0.0, 0, -1.0)))
 
+# west wall
 Sc.add(Plane(material = red_diffuse,  center = vec3(555.0, 555/2, -555/2), width = 555.0,height = 555.0,  u_axis = vec3(0.0, 1.0, 0), v_axis = vec3(0.0, 0, -1.0)))
 
+# ceiling
 Sc.add(Plane(material = white_diffuse,  center = vec3(555/2, 555, -555/2), width = 555.0,height = 555.0,  u_axis = vec3(1.0, 0.0, 0), v_axis = vec3(0.0, 0, -1.0)))
 
+# floor
 Sc.add(Plane(material = white_diffuse,  center = vec3(555/2, 0., -555/2), width = 555.0,height = 555.0,  u_axis = vec3(1.0, 0.0, 0), v_axis = vec3(0.0, 0, -1.0)))
 
 
@@ -52,7 +56,7 @@ Sc.add(Sphere( material = blue_glass, center = vec3(370.5, 165/2, -65-185/2), ra
 					 importance_sampled = True)
 # Render 
 
-img = Sc.render(samples_per_pixel = 10, progress_bar = True)
+img = Sc.render(samples_per_pixel = 10, progress_bar = False)
 # you are going to need more than 10 samples to remove the noise. At least 1000 for a nice image.
 
 img.save("cornell_box.png")
